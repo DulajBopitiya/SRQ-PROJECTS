@@ -16,6 +16,7 @@ void setup()
   usb_msc.begin();
 
   // Try to init SD at startup
+  // This will be reinitialized when USB is connected
   initial_CSV_SETUP();
 }
 
