@@ -12,7 +12,6 @@ unsigned long last_log_time = 0;
 // LED blink timing
 unsigned long last_blink = 0;
 
-
 void initial_CSV_SETUP()
 {
     if (sd.begin(5, SD_SCK_MHZ(50)))
