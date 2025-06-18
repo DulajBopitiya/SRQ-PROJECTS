@@ -2,7 +2,7 @@
 #include <SD_CONFIG.h>
 #include <LOG_HANDLE.h>
 
-
+bool MSU_ENABLED = false; // Set to false to disable MSU
 void setup()
 {
   pinMode(led_pin, OUTPUT);
@@ -33,6 +33,8 @@ void loop()
   // When connected to PC
   if (now_mounted && !last_mounted)
   {
+
+    MSU_ENABLED = true; // Enable MSU functionality
     digitalWrite(led_pin, HIGH);
     SD_CARD_MSU_SETUP(); // Reinitialize SD for USB MSC
     // Stop writing to SD while USB is connected
